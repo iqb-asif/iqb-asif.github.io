@@ -91,7 +91,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease }}
-          className="relative aspect-square w-full max-w-[460px] mx-auto"
+          className="relative aspect-square w-full max-w-[760px] mx-auto "
         >
           <SkillsWeb className="block h-full w-full" />
         </motion.div>

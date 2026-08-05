@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { logResumeDownload } from "@/lib/logResumeDownload";
 
 export function DownloadButton({ href, children }: { href: string; children: React.ReactNode }) {
   const [burstKey, setBurstKey] = useState(0);
@@ -10,8 +11,20 @@ export function DownloadButton({ href, children }: { href: string; children: Rea
 
   return (
     <motion.a
-      href={href}
-      onClick={() => setBurstKey((k) => k + 1)}
+  href={href}
+  onClick={async (e) => {
+    e.preventDefault();
+
+    setBurstKey((k) => k + 1);
+
+    try {
+      await logResumeDownload();
+    } catch (err) {
+      console.error(err);
+    }
+
+    window.open(href, "_blank");
+  }}
       whileHover={{ y: -1 }}
       whileTap={{ scale: 0.97 }}
       className={cn(

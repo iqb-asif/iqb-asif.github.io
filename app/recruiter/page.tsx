@@ -5,6 +5,7 @@ import { profile } from "@/data/profile";
 import { mizan } from "@/data/projects";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 
+
 export const metadata = { title: "Recruiter Mode | Asif Iqbal" };
 
 const quickFacts = [

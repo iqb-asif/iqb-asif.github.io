@@ -19,8 +19,8 @@ export function AnimatedMail() {
       <style jsx>{`
         #letter-wrap {
           position: relative;
-          width: 72px;
-          height: 54px;
+  width: 72px;
+  height: 54px; 
         }
         #animated-mail {
           position: absolute;
@@ -109,17 +109,7 @@ export function AnimatedMail() {
           background: var(--accent-blue);
           opacity: 0.5;
         }
-        .shadow {
-          position: absolute;
-          top: 66px;
-          left: 50%;
-          width: 110px;
-          height: 10px;
-          transition: 0.4s;
-          transform: translateX(-50%);
-          border-radius: 100%;
-          background: radial-gradient(rgba(0, 0, 0, 0.35), transparent 70%);
-        }
+       
         #letter-wrap:hover #animated-mail {
           transform: translateY(16px);
         }

@@ -2,7 +2,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedMail } from "@/components/ui/AnimatedMail";
 import { profile } from "@/data/profile";
 import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
+import { GithubIcon } from "@/components/icons/BrandIcons";
+import { AnimatedLinkedIn } from "@/components/ui/AnimatedLinkedIn";
 
 const methods = [
   {
@@ -14,7 +15,7 @@ const methods = [
     envelope: true,
   },
   {
-    icon: LinkedinIcon,
+    icon: AnimatedLinkedIn,
     title: "LinkedIn",
     value: profile.linkedin,
     href: profile.linkedinUrl,
@@ -52,7 +53,7 @@ export function Contact() {
             {m.envelope ? (
               <AnimatedMail />
             ) : (
-              <m.icon className="size-5 text-accent-blue" />
+              <m.icon className="size-3 text-accent-blue" />
             )}
             <p className="mt-4 font-medium">{m.title}</p>
             <p className="text-sm text-text-secondary mt-1 font-mono">{m.value}</p>

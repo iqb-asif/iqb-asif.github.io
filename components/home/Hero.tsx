@@ -22,7 +22,7 @@ export function Hero() {
             transition={{ duration: 0.5, ease }}
             className="font-mono text-xs uppercase tracking-[0.25em] text-accent-blue mb-5"
           >
-            {profile.location} · Available for relocation
+            {profile.location} | {profile.profile}
           </motion.p>
 
           <motion.h1
@@ -34,21 +34,28 @@ export function Hero() {
             <HoverFillText text={profile.name} />
           </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.14, ease }}
-            className="mt-4 font-mono text-sm md:text-base text-text-secondary"
-          >
-            <FlipWords
-              words={headlineParts}
-              colors={["var(--accent-blue)"]}
-              underline={false}
-              lineEm={1.4}
-              durationSec={headlineParts.length * 1.6}
-              className="font-mono text-sm md:text-base"
-            />
-          </motion.div>
+         <motion.div 
+  initial={{ opacity: 0, y: 14 }} 
+  animate={{ opacity: 1, y: 0 }} 
+  transition={{ duration: 0.55, delay: 0.14, ease: "easeOut" }} // Fixed here
+  className="mt-4 font-mono text-sm md:text-base text-text-secondary" 
+> 
+<FlipWords 
+  words={headlineParts} 
+  // 👈 Add an explicit color mapping value for each of your 4 headline items
+  colors={[
+    "var(--accent-blue)",   // For Investment Analytics
+    "#b5c1d3",              // For Python (or a hex code)
+    "var(--accent-amber)",  // For SQL
+    "#d54f22"               // For Power BI
+  ]} 
+  underline={false} 
+  lineEm={1.4} 
+  durationSec={16} 
+  className="font-mono text-sm md:text-base" 
+/>
+</motion.div>
+
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}

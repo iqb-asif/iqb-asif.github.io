@@ -1,8 +1,10 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
+
 export function FlipWords({
   words = ["automated", "reliable", "scalable"],
-  durationSec = 5.4,
+  durationSec = 4,
   colors = ["var(--accent-blue)", "var(--accent-red)", "var(--accent-amber)"],
   lineEm = 1.3,
   underline = true,
@@ -15,55 +17,72 @@ export function FlipWords({
   underline?: boolean;
   className?: string;
 }) {
+  // 1. Clone the first word and place it at the end to create a structural loop anchor
+  const loopWords = [...words, words[0]];
   const N = words.length;
-  const transW = 5;
 
-  const keyframeRules = words
-    .map((_, i) => {
-      const prevIndex = (i - 1 + N) % N;
-      const prevMargin = -(prevIndex * lineEm);
-      const newMargin = -(i * lineEm);
-      const segStart = (i / N) * 100;
-      const transEnd = segStart + transW;
-      const segEnd = ((i + 1) / N) * 100;
-      return `
-        ${segStart}% { margin-top: ${prevMargin}em; }
-        ${transEnd}% { margin-top: ${newMargin}em; }
-        ${segEnd}% { margin-top: ${newMargin}em; }
-      `;
-    })
-    .join("\n");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  const wordDisplayTimeMs = (durationSec * 1000) / N;
+
+  useEffect(() => {
+    if (N <= 1) return;
+
+    const timer = setInterval(() => {
+      setIsTransitioning(true);
+      setCurrentIndex((prev) => prev + 1);
+    }, wordDisplayTimeMs);
+
+    return () => clearInterval(timer);
+  }, [N, wordDisplayTimeMs]);
+
+  // 2. Intercept when it lands on the cloned item, snap back to index 0 instantly
+  useEffect(() => {
+    if (currentIndex === N) {
+      const resetTimer = setTimeout(() => {
+        setIsTransitioning(false); // Kill transition effect completely
+        setCurrentIndex(0); // Snap back to the real first word
+      }, 500); // Matches the duration-500 transition window below
+
+      return () => clearTimeout(resetTimer);
+    }
+  }, [currentIndex, N]);
+
+  if (!words || N === 0) return null;
 
   return (
-    <span id="flip-root" className={`inline-block align-middle ${className}`}>
-      <span id="flip">
-        {words.map((w, i) => (
-          <span key={w}>
-            <span style={{ color: colors[i % colors.length] }}>{w}</span>
+    <span 
+      className={`inline-block align-middle overflow-hidden relative ${className}`}
+      style={{ height: `${lineEm}em` }}
+    >
+      <span 
+        className="block"
+        style={{ 
+          transform: `translateY(-${currentIndex * lineEm}em)`,
+          // Turns transition completely off during the snap-back frame
+          transition: isTransitioning ? "transform 500ms ease-in-out" : "none" 
+        }}
+      >
+        {loopWords.map((w, i) => (
+          <span 
+            key={`${w}-${i}`} 
+            className="block"
+            style={{ height: `${lineEm}em` }}
+          >
+            <span 
+              className="inline-block font-semibold"
+              style={{ 
+                lineHeight: `${lineEm}em`,
+                color: colors[i % colors.length],
+                borderBottom: underline ? "1.5px solid currentColor" : "none"
+              }}
+            >
+              {w}
+            </span>
           </span>
         ))}
       </span>
-      <style jsx>{`
-        #flip-root {
-          height: ${lineEm}em;
-          overflow: hidden;
-        }
-        #flip > span {
-          display: block;
-        }
-        #flip > span > span {
-          display: inline-block;
-          font-weight: 600;
-          line-height: ${lineEm}em;
-          border-bottom: ${underline ? "1.5px solid currentColor" : "none"};
-        }
-        #flip {
-          animation: flipShow ${durationSec}s linear infinite;
-        }
-        @keyframes flipShow {
-          ${keyframeRules}
-        }
-      `}</style>
     </span>
   );
 }

@@ -47,7 +47,7 @@ export function PageHeader({
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent-blue mb-3">
             {eyebrow}
           </p>
-          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-balance max-w-3xl">
+          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-balance max-w-none">
             <HoverFillText text={title} />
           </h1>
         </RevealOnLoad>

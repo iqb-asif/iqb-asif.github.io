@@ -1,7 +1,7 @@
 export const profile = {
   name: "Asif Iqbal",
-  headline: "Investment Analytics | Python | SQL | Power BI",
-  location: "Delhi, India",
+   headline: "Investment Analytics | Institutional Reporting | Portfolio Analytics | Performance Measurement | Data Engineering | Business Intelligence",  
+   location: "Delhi, India",
   email: "iqb.asif@outlook.com",
   phone: "+91 76786 22647",
   linkedin: "linkedin.com/in/iqbca",
@@ -9,6 +9,7 @@ export const profile = {
   github: "github.com/iqbca",
   githubUrl: "https://github.com/iqbca",
   site: "iqbca.github.io",
+  profile: "Senior Specialist - Investments",
 
   valueProposition:
     "Building reliable analytics solutions that combine investment expertise with automation, business intelligence, and scalable data workflows.",
@@ -69,10 +70,10 @@ export const profile = {
 };
 
 export const snapshotCards = [
-  { label: "Experience", value: "6+ Years", detail: "Investment Analytics" },
-  { label: "Current Focus", value: "UK Pension Reporting", detail: "Mercer Consulting" },
-  { label: "Technology", value: "Python · SQL · Power BI", detail: "Automation & BI" },
-  { label: "Specialization", value: "Portfolio Analytics", detail: "Performance & benchmarking" },
+  { label: "Experience", value: "7+ Years", detail: "Investment Analytics" },
+  { label: "Current Focus", value: "UK/Ireland Pension Reporting", detail: "Mercer - a Marsh Business" },
+  { label: "Technology", value: "Python · SQL · VBA · Power BI", detail: "Automation & BI" },
+  { label: "Specialization", value: "Portfolio Analytics", detail: "Performance, benchmarking & Attribution" },
   { label: "Flagship Project", value: "Mizan Analytics", detail: "Institutional reporting platform" },
   { label: "Managed Assets", value: "₹100 Cr+", detail: "HNI / UHNI portfolios" },
 ];

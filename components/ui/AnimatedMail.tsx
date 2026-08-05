@@ -111,7 +111,7 @@ export function AnimatedMail() {
         }
        
         #letter-wrap:hover #animated-mail {
-          transform: translateY(16px);
+          transform: translateY(26px);
         }
         #letter-wrap:hover .top-fold {
           transition: transform 0.4s, z-index 0.2s;
@@ -120,10 +120,10 @@ export function AnimatedMail() {
           z-index: 0;
         }
         #letter-wrap:hover .letter {
-          height: 50px;
+          height: 40px;
         }
         #letter-wrap:hover .shadow {
-          width: 70px;
+          width: 50px;
         }
       `}</style>
     </div>

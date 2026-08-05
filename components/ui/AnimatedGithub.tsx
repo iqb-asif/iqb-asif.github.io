@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LinkedinIcon } from "@/components/icons/BrandIcons";
+import { GithubIcon } from "@/components/icons/BrandIcons";
 
-export function AnimatedLinkedIn() {
+export function AnimatedGithub() {
   return (
     <motion.div
       initial="rest"
@@ -17,8 +17,8 @@ export function AnimatedLinkedIn() {
           },
           hover: {
             scale: 10,
-            x: 220,
-            y: 50,
+            x: 200,
+            y: 100,
             opacity: 0.2,
           },
         }}
@@ -27,14 +27,14 @@ export function AnimatedLinkedIn() {
         }}
         className="relative z-10"
       >
-        <LinkedinIcon className="size-8 text-accent-blue" />
+        <GithubIcon className="size-8 text-accent-blue" />
       </motion.div>
 
       <svg
         className="absolute inset-0"
         viewBox="0 0 50 50"
       >
-     
+        
       </svg>
     </motion.div>
   );

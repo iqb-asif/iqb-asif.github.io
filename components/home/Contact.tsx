@@ -4,6 +4,7 @@ import { profile } from "@/data/profile";
 import { Mail } from "lucide-react";
 import { GithubIcon } from "@/components/icons/BrandIcons";
 import { AnimatedLinkedIn } from "@/components/ui/AnimatedLinkedIn";
+import { AnimatedGithub } from "../ui/AnimatedGithub";
 
 const methods = [
   {
@@ -23,7 +24,7 @@ const methods = [
     envelope: false,
   },
   {
-    icon: GithubIcon,
+    icon: AnimatedGithub,
     title: "GitHub",
     value: profile.github,
     href: profile.githubUrl,
@@ -34,6 +35,7 @@ const methods = [
 
 export function Contact() {
   return (
+    
     <section id="contact" className="container-page py-24 md:py-32 border-t border-border">
       <SectionHeading
         eyebrow="Connect"

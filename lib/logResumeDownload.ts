@@ -1,17 +1,15 @@
 export async function logResumeDownload() {
 
-  const ip = await fetch("https://ipapi.co/json/");
-  const info = await ip.json();
+const ip = await fetch("https://ipwho.is/");
+const info = await ip.json();
 
   const browser = navigator.userAgent;
 
   const payload = {
 
-    ip: info.ip,
-
-    city: info.city,
-
-    country: info.country_name,
+   ip: info.ip,
+city: info.city,
+country: info.country,
 
     browser: browser,
 

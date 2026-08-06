@@ -82,9 +82,7 @@ export default function AboutPage() {
 
         <div className="mt-24 pt-16 border-t border-border flex items-center justify-between flex-wrap gap-6">
           <p className="text-text-secondary max-w-md">
-            Every role has expanded my understanding of investment analytics. The projects on this
-            site demonstrate how I apply that experience to design practical, scalable analytical
-            solutions.
+            Every role has expanded my understanding of investment analytics. The projects on this site demonstrate how I apply that experience to design practical, scalable analytical solutions.
           </p>
           <Button href="/projects" variant="primary">
             Explore Projects

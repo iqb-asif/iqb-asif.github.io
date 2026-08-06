@@ -3,39 +3,21 @@
 import { motion } from "framer-motion";
 import { GithubIcon } from "@/components/icons/BrandIcons";
 
-export function AnimatedGithub() {
+export function AnimatedGithub({ hovered = false }: { hovered?: boolean }) {
   return (
-    <motion.div
-      initial="rest"
-      whileHover="hover"
-      className="relative inline-flex items-center justify-center w-12 h-12"
-    >
+    <div className="relative inline-flex items-center justify-center w-12 h-12">
       <motion.div
-        variants={{
-          rest: {
-            scale: 1.4,
-          },
-          hover: {
-            scale: 10,
-            x: 200,
-            y: 100,
-            opacity: 0.2,
-          },
-        }}
-        transition={{
-          duration: 0.25,
-        }}
+        animate={{ scale: hovered ? 10 : 1 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-10"
       >
         <GithubIcon className="size-8 text-accent-blue" />
       </motion.div>
-
-      <svg
-        className="absolute inset-0"
-        viewBox="0 0 50 50"
-      >
-        
-      </svg>
-    </motion.div>
+      <motion.div
+        animate={{ opacity: hovered ? 0.25 : 0, scale: hovered ? 10 : 0.8 }}
+        transition={{ duration: 0.3 }}
+        className="absolute inset-0 rounded-full bg-accent-blue blur-md -z-10"
+      />
+    </div>
   );
 }

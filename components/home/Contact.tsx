@@ -66,12 +66,11 @@ export function Contact() {
             const isHovered = hovered === m.title;
 
             const shared = {
-              key: m.title,
-              onMouseEnter: () => setHovered(m.title),
-              onMouseLeave: () => setHovered(null),
-              className:
-                "group relative overflow-hidden glow-card border border-transparent bg-bg p-6 md:p-7",
-            };
+  onMouseEnter: () => setHovered(m.title),
+  onMouseLeave: () => setHovered(null),
+  className:
+    "group relative overflow-hidden glow-card border border-transparent bg-bg p-6 md:p-7",
+};
 
             const icon =
               m.title === "Email" ? (
@@ -108,6 +107,7 @@ export function Contact() {
               return (
                 <button
                   {...shared}
+                  key={m.title}
                   type="button"
                   onClick={() => setPhoneOpen(true)}
                 >
@@ -119,6 +119,7 @@ export function Contact() {
             return (
               <a
                 {...shared}
+                key={m.title}
                 href={m.href}
                 target={m.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
@@ -157,8 +158,8 @@ export function Contact() {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{
                 type: "spring",
-                stiffness: 0,
-                damping: 24,
+                stiffness: 50,
+                damping: 10,
               }}
               onClick={(e) => e.stopPropagation()}
               className="rounded-[var(--radius-lg)] bg-bg border border-border p-8 text-center max-w-sm w-full"

@@ -27,7 +27,6 @@ export default function ResumePage() {
             <div>
               <p className="font-mono text-xs uppercase tracking-wider text-text-tertiary mb-3">Contact</p>
               <p className="text-sm text-text-secondary">{profile.email}</p>
-              <p className="text-sm text-text-secondary">{profile.phone}</p>
               <p className="text-sm text-text-secondary">{profile.location}</p>
               <p className="text-sm text-text-secondary">{profile.linkedin}</p>
             </div>

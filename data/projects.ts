@@ -31,6 +31,36 @@ export const mizan = {
   ],
 };
 
+export const faceAI = {
+  name: "AI Face Recognition & Facial Intelligence",
+  tagline:
+    "A real-time Python-based facial intelligence application combining computer vision, deep face embeddings, similarity matching and automated multi-frame enrollment.",
+description:
+    "A real-time facial intelligence application that uses computer vision, deep face embeddings, similarity matching, and automated multi-frame enrollment to recognize and analyze faces in live video streams.",
+  technologies: ["Python", "OpenCV", "FaceNet", "NumPy", "SQLite"],
+  pipelines: [
+    { label: "Video Capture", detail: "Real-time video stream" },
+    { label: "Face Detection", detail: "OpenCV Haar cascades" },
+    { label: "Face Embeddings", detail: "Deep learning with FaceNet" },
+    { label: "Similarity Matching", detail: "Cosine similarity for recognition" },
+    { label: "Multi-frame Enrollment", detail: "Automated face registration" },
+  ],
+  highlights: [
+    "Real-time face detection and recognition from live video streams.",
+    "Deep learning-based face embeddings for accurate identification.",
+    "Automated multi-frame enrollment for robust face registration.",
+    "SQLite database for storing face embeddings and metadata.",
+  ],
+  techRationale: [
+    { tech: "Python", reason: "Core language for computer vision and deep learning." },
+    { tech: "OpenCV", reason: "Computer vision library for real-time image processing." },
+    { tech: "FaceNet", reason: "Deep learning model for generating face embeddings." },
+    { tech: "NumPy", reason: "Numerical computations and array manipulations." },
+    { tech: "SQLite", reason: "Lightweight database for storing face data." },
+  ],
+  status: "Active Development",
+};
+
 export const projects: ProjectEntry[] = [
   {
     slug: "mizan-analytics",
@@ -44,13 +74,32 @@ export const projects: ProjectEntry[] = [
     hasCaseStudy: true,
   },
   {
-    slug: "quantitative-market-analytics",
-    title: "Quantitative Market Analytics Platform",
+  slug: "FaceAI",
+  title: "AI Face Recognition",
+  summary:
+    "Real-time facial recognition application using computer vision, deep face embeddings, similarity matching, and automated multi-frame enrollment.",
+  technologies: [
+    "Python",
+    "OpenCV",
+    "Deep Learning",
+    "Face Embeddings",
+    "CUDA",
+  ],
+  status: "In active development",
+  progress: 65,
+  featured: false,
+  hasCaseStudy: true,
+},
+  {
+    slug: "Trading",
+    title: "AI-Powered Trade Signal & Portfolio Analytics Platform",
     summary:
       "Analyses 750+ NSE-listed securities using technical indicators and rule-based trading signals, with automated data pipelines and Power BI dashboards.",
-    technologies: ["Python", "SQL", "Pandas", "NumPy", "Power BI"],
+    technologies: ["Python", "Pandas", "NumPy", "Power BI"],
     status: "Complete",
-    progress: 100,
+    progress: 100,  
+        featured: true,
+    hasCaseStudy: true,
   },
   {
     slug: "institutional-reporting-automation",
@@ -61,6 +110,7 @@ export const projects: ProjectEntry[] = [
     status: "Complete",
     progress: 100,
   },
+  
   {
     slug: "economic-assumptions-framework",
     title: "Economic Assumptions Reporting Framework",
@@ -80,3 +130,95 @@ export const projects: ProjectEntry[] = [
     progress: 100,
   },
 ];
+
+export const trading = {
+  name: "AI Trade Signal & Portfolio Analytics Platform",
+
+  tagline:
+    "An end-to-end investment analytics platform that scans 750+ stocks daily, generates AI-powered trade signals, automates Telegram alerts, and delivers portfolio analytics through interactive Power BI dashboards.",
+
+  status: "Active Development",
+
+  technologies: [
+    "Python",
+    "Pandas",
+    "NumPy",
+    "TA-Lib",
+    "Yahoo Finance",
+    "NSE",
+    "Telegram Bot API",
+    "SQLite",
+    "Power BI",
+    "Git",
+  ],
+
+  pipeline: [
+    {
+      label: "Market Data",
+      detail: "NSE & Yahoo Finance",
+    },
+    {
+      label: "AI Analysis",
+      detail: "Indicators & Scoring",
+    },
+    {
+      label: "Signal Engine",
+      detail: "Buy / Sell Signals",
+    },
+    {
+      label: "Alerts",
+      detail: "Telegram Automation",
+    },
+    {
+      label: "Portfolio",
+      detail: "Trade Tracking",
+    },
+    {
+      label: "Analytics",
+      detail: "Power BI Dashboards",
+    },
+  ],
+
+  highlights: [
+    "Scans more than 750 stocks every trading day.",
+    "Generates AI-powered Buy and Sell trade signals.",
+    "Ranks opportunities using AI Score, Confidence Level and Risk Assessment.",
+    "Automatically delivers trade alerts through Telegram.",
+    "Tracks portfolio performance and historical trade outcomes.",
+    "Interactive Power BI dashboards for portfolio monitoring and signal analytics.",
+    "Measures signal performance to continuously improve decision quality.",
+  ],
+
+  techRationale: [
+    {
+      tech: "Python",
+      reason:
+        "Core language used for data collection, AI scoring, automation and signal generation.",
+    },
+    {
+      tech: "Yahoo Finance",
+      reason:
+        "Provides historical market data used for technical analysis and backtesting.",
+    },
+    {
+      tech: "NSE",
+      reason:
+        "Supplies live Indian market data and security universe.",
+    },
+    {
+      tech: "Telegram Bot",
+      reason:
+        "Enables automated delivery of real-time trading signals.",
+    },
+    {
+      tech: "SQLite",
+      reason:
+        "Stores historical signals, trades and portfolio information.",
+    },
+    {
+      tech: "Power BI",
+      reason:
+        "Creates interactive dashboards for portfolio performance, trade analytics and reporting.",
+    },
+  ],
+};

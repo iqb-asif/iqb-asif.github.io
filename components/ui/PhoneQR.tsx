@@ -11,7 +11,7 @@ export function PhoneQR({ hovered = false }: PhoneQRProps) {
   return (
    <div className="relative inline-flex items-center justify-center w-12 h-12">
       <motion.div
-              animate={{ scale: hovered ? 10 : 1 }}
+        animate={{ scale: hovered ? 10 : 1 , x: hovered ? 280 : 0, y: hovered ? 80 : 0}}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="relative z-10"
             >

@@ -7,7 +7,7 @@ export function AnimatedGithub({ hovered = false }: { hovered?: boolean }) {
   return (
     <div className="relative inline-flex items-center justify-center w-12 h-12">
       <motion.div
-        animate={{ scale: hovered ? 10 : 1 }}
+        animate={{ scale: hovered ? 15 : 1 , x: hovered ? 100 : 0, y: hovered ? 100 : 0}} 
         transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-10"
       >

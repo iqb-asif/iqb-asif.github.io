@@ -147,7 +147,7 @@ export function Contact() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3 }}
             onClick={() => setPhoneOpen(false)}
             className="fixed inset-0 z-[100] bg-black/75 backdrop-blur-sm flex items-center justify-center p-6"
           >
@@ -157,7 +157,7 @@ export function Contact() {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{
                 type: "spring",
-                stiffness: 260,
+                stiffness: 0,
                 damping: 24,
               }}
               onClick={(e) => e.stopPropagation()}

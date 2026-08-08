@@ -123,9 +123,10 @@ export function ExpCards({
           delay: index * 0.06,
         }}
       >
-       <motion.div
+<motion.div
   ref={cardRef}
-  layoutId={`card-${experiment.slug}`}
+
+  style={{ perspective: 1200 }}
   layout
   transition={{
     layout: {
@@ -264,54 +265,85 @@ export function ExpCards({
             />
 
             <motion.div
-              className="
-                fixed
-                inset-0
-                z-50
-                flex
-                items-center
-                justify-center
-                p-6
-              "
-            >
-              <motion.div
-                ref={cardRef}
-                layoutId={`card-${experiment.slug}`}
-                transition={{
-  type: "spring",
-  stiffness: 200,
-  damping: 18,
-  mass: 0.5,
-}}
-                className="
-                  relative
-                  overflow-hidden
-                  rounded-[8px]
-                  border
-                  border-border
-                  bg-bg
-                  w-full
-                  max-w-6xl
-                  min-h-[650px]
-                "
-              >
+  className="
+    fixed
+    inset-0
+    z-50
+    flex
+    items-center
+    justify-center
+  "
+  style={{
+    perspective: "1200px",
+  }}
+>
+  
+  <motion.div
+  ref={cardRef}
+  initial={{
+    opacity: 0,
+    scale: 0.15,
+    rotateY: -180,
+  }}
+  animate={{
+    opacity: 1,
+    scale: 1,
+    rotateY: 0,
+  }}
+  exit={{
+    opacity: 0,
+    scale: 0.15,
+    rotateY: 180,
+  }}
+  transition={{
+    opacity: {
+      duration: 0.2,
+    },
+    scale: {
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1],
+    },
+    rotateY: {
+      duration: 0.65,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }}
+  style={{
+    transformStyle: "preserve-3d",
+    backfaceVisibility: "hidden",
+  }}
+  className="
+    relative
+    overflow-hidden
+    rounded-[8px]
+    border
+    border-border
+    bg-bg
+    w-[90vw]
+    h-[90vh]
+    max-w-none
+  "
+>
                                 <div
                   className="
-                    grid
-                    h-full
-                    min-h-[650px]
-                    lg:grid-cols-[42%_58%]
+grid
+h-full
+grid-cols-1 lg:grid-cols-[42%_58%]
                   "
                 >
                   {/* LEFT VISUAL */}
 
                   <div
                     className="
-                      relative
-                      overflow-hidden
-                      border-r
-                      border-border
-                      bg-surface
+                    relative
+min-h-[35vh]
+overflow-hidden
+border-b
+border-border
+bg-surface
+lg:min-h-0
+lg:border-b-0
+lg:border-r
                     "
                   >
                     <ExperimentVisual
@@ -372,8 +404,7 @@ export function ExpCards({
                     className="
                       relative
                       overflow-y-auto
-                      p-10
-                    "
+p-6 md:p-8 lg:p-10                    "
                   >
                     <button
                       onClick={() => setOpen(false)}

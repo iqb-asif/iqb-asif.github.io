@@ -53,13 +53,8 @@ export function Contact() {
     <>
       <section
         id="contact"
-        className="container-page py-24 md:py-32 border-t border-border"
+        className="container-page border-t border-border"
       >
-        <SectionHeading
-          eyebrow="Connect"
-          title="Let's start a conversation"
-          description="If you're hiring for Investment Analytics, Business Intelligence, or Analytics Engineering roles, I'd be happy to discuss how my experience aligns with your team."
-        />
 
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-[var(--radius-lg)] overflow-hidden border border-border">
           {methods.map((m) => {
@@ -79,9 +74,9 @@ export function Contact() {
                 <AnimatedLinkedIn hovered={isHovered} />
               ) : m.title === "GitHub" ? (
                 <AnimatedGithub hovered={isHovered} />
-              ) : (
+              ) : m.title === "Call Me" ? (
                 <PhoneQR hovered={isHovered} />
-              );
+              ) : null;
 
             const content = (
               <>
@@ -109,7 +104,9 @@ export function Contact() {
                   {...shared}
                   key={m.title}
                   type="button"
+
                   onClick={() => setPhoneOpen(true)}
+                    className={`${shared.className} text-left`}
                 >
                   {content}
                 </button>
@@ -138,6 +135,7 @@ export function Contact() {
               className="font-mono text-[11px] px-2.5 py-1 rounded-[var(--radius-sm)] border border-border text-text-secondary"
             >
               {loc}
+              <p></p>
             </span>
           ))}
         </div>
@@ -159,8 +157,8 @@ export function Contact() {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{
                 type: "spring",
-                stiffness: 50,
-                damping: 10,
+                stiffness: 500,
+                damping: 50,
               }}
               onClick={(e) => e.stopPropagation()}
               className="rounded-[var(--radius-lg)] bg-bg border border-border p-8 text-center max-w-sm w-full"
@@ -176,6 +174,7 @@ export function Contact() {
           </motion.div>
         )}
       </AnimatePresence>
+      
     </>
   );
 }

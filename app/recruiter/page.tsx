@@ -33,7 +33,7 @@ export default function RecruiterPage() {
         </p>
         <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">{profile.name}</h1>
         <p className="mt-2 text-lg text-text-secondary">{profile.recruiterheadline}</p>
-        <p className="mt-4 max-w-full text-text-secondary leading-relaxed">{profile.recsummary}</p>
+        <p className="mt-4 max-w-10xl text-text-secondary leading-relaxed">{profile.recsummary}</p>
       </RevealOnLoad>
 
       {/* quick facts */}

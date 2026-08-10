@@ -25,10 +25,8 @@ export default function ResumePage() {
         <div className="grid md:grid-cols-[1fr_1.6fr] gap-16">
           <div className="space-y-10">
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-text-tertiary mb-3">Contact</p>
-              <p className="text-sm text-text-secondary">{profile.email}</p>
-              <p className="text-sm text-text-secondary">{profile.location}</p>
-              <p className="text-sm text-text-secondary">{profile.linkedin}</p>
+              <p className="font-mono text-xs uppercase tracking-wider text-text-tertiary mb-3">Highlight</p>
+              <p className="text-sm text-text-secondary">{profile.recsummary}</p>
             </div>
 
             <div>
@@ -40,6 +38,14 @@ export default function ResumePage() {
                   <p className="text-xs text-text-tertiary font-mono">{e.institution} · {e.period}</p>
                 </div>
               ))}
+            </div>
+            <div>
+               <p className="font-mono text-xs uppercase tracking-wider text-text-tertiary mb-3">Professional Strengths</p>
+              <ul className="space-y-1.5">                
+                {profile.strengths.map((c) => (
+                  <li key={c} className="text-sm text-text-secondary">{c}</li>
+                ))}
+                </ul>
             </div>
 
             <div>

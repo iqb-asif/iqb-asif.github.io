@@ -46,6 +46,26 @@ export const profile = {
     "India",
   ],
 
+  strengths: [
+    "Portfolio Analytics",
+    "Performance Measurement",
+    "Investment Reporting",
+    "Benchmark Analysis",
+    "Asset Allocation",
+    "Institutional Reporting",
+  "Python", "SQL", "PostgreSQL", "Power BI", "VBA", "Power Query",
+    "Problem Solving",
+    "Data Validation",
+    "Workflow Optimization",
+    "Business Analysis",
+    "Reporting Quality",
+    "Communication",
+    "Documentation",
+    "Stakeholder Collaboration",
+    "Continuous Learning",
+    "Attention to Detail",
+],
+
   education: [
     {
       institution: "Delhi University",

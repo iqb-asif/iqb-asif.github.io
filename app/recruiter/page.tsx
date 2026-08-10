@@ -5,7 +5,6 @@ import { profile } from "@/data/profile";
 import { mizan } from "@/data/projects";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 
-
 export const metadata = { title: "Recruiter Mode | Asif Iqbal" };
 
 const quickFacts = [
@@ -27,14 +26,14 @@ const skillsMatrix = [
 
 export default function RecruiterPage() {
   return (
-    <div className="container-page py-12 md:py-20">
+    <div className="container-page py-12 md:py-20" >
       <RevealOnLoad className="mb-12">
         <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent-blue mb-3">
           Recruiter Mode
         </p>
         <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">{profile.name}</h1>
-        <p className="mt-2 text-lg text-text-secondary">{profile.headline}</p>
-        <p className="mt-4 max-w-2xl text-text-secondary leading-relaxed">{profile.summary}</p>
+        <p className="mt-2 text-lg text-text-secondary">{profile.recruiterheadline}</p>
+        <p className="mt-4 max-w-full text-text-secondary leading-relaxed">{profile.recsummary}</p>
       </RevealOnLoad>
 
       {/* quick facts */}

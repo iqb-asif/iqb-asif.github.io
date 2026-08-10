@@ -1,6 +1,7 @@
 export const profile = {
   name: "Asif Iqbal",
    headline: "Investment Analytics | Institutional Reporting | Portfolio Analytics | Performance Measurement | Data Engineering | Business Intelligence",  
+   recruiterheadline: "Investment Analytics | Portfolio Analytics | Performance Attribution | Bi",
    location: "Delhi, India",
   email: "iqb.asif@outlook.com",
   phone: "+91 76786 22647",
@@ -11,6 +12,7 @@ export const profile = {
   site: "iqbca.github.io",
   profile: "Senior Specialist - Investments",
 
+  recsummary: "I specialize in Workflow Automation and Process Streamlining , using AI, Python, SQL, VBA, Excel, Power Query, and Power BI to turn manual, repetitive processes into efficient and scalable systems. My focus is not just on individual tools, but on understanding the business problem, improving the underlying workflow, automating data and reporting processes, and building dashboards or analytical systems that make everyday work faster, more reliable, and easier to manage.",
   valueProposition:
     "Building reliable analytics solutions that combine investment expertise with automation, business intelligence, and scalable data workflows.",
 
@@ -23,7 +25,7 @@ export const profile = {
     focus: "UK Pension & Institutional Reporting",
   },
 
-  yearsExperience: "6+",
+  yearsExperience: "7+",
 
   targetRoles: [
     "Investment Analyst",
@@ -71,7 +73,7 @@ export const profile = {
 
 export const snapshotCards = [
   { label: "Experience", value: "7+ Years", detail: "Investment Analytics" },
-  { label: "Current Focus", value: "UK/Ireland Pension Reporting", detail: "Mercer - a Marsh Business" },
+  { label: "Current Domain", value: "UK/Ireland Pension Reporting", detail: "Mercer - a Marsh Business" },
   { label: "Technology", value: "Python · SQL · VBA · Power BI", detail: "Automation & BI" },
   { label: "Specialization", value: "Portfolio Analytics", detail: "Performance, benchmarking & Attribution" },
   { label: "Flagship Project", value: "Mizan Analytics", detail: "Institutional reporting platform" },

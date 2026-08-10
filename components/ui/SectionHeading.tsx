@@ -19,7 +19,7 @@ export function SectionHeading({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={align === "center" ? "text-center mx-auto max-w-2xl" : "max-w-2xl"}
+      className={align === "center" ? "text-center mx-auto max-w-2xl" : "max-w-full"}
     >
       <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent-blue mb-3">
         {eyebrow}

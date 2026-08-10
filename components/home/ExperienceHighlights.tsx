@@ -10,7 +10,7 @@ export function ExperienceHighlights() {
     <section id="experience" className="container-page py-24 md:py-32 border-t border-border">
       <SectionHeading
         eyebrow="Career"
-        title="Six years, one direction"
+        title="Professional journey"
         description="From investment operations to analytics engineering — each stage built on the last."
       />
 

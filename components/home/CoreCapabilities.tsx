@@ -3,12 +3,14 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { capabilities } from "@/data/capabilities";
+import { Button } from "../ui/Button";
 
 const accents = ["var(--accent-blue)", "var(--accent-red)", "var(--accent-amber)", "var(--accent-blue)"];
 
 export function CoreCapabilities() {
   return (
     <section id="capabilities" className="container-page py-24 md:py-32 border-t border-border">
+      
       <SectionHeading
         eyebrow="Capabilities"
         title="What that experience translates into"
@@ -27,6 +29,7 @@ export function CoreCapabilities() {
           >
             <h3 className="text-lg font-semibold">{cap.title}</h3>
             <p className="mt-2 text-sm text-text-secondary leading-relaxed">{cap.description}</p>
+
             <div className="mt-4 flex flex-wrap gap-2">
               {cap.items.map((item) => (
                 <span

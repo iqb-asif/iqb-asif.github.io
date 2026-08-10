@@ -131,6 +131,7 @@ export function Contact() {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-3">
+          <p className="text-sm text-text-secondary">Preferred locations:</p><br />
           {profile.preferredLocations.map((loc) => (
             <span
               key={loc}

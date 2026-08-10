@@ -34,7 +34,7 @@ export default function AboutPage() {
         </div>
 
         {/* chapters */}
-        <div className="space-y-16 max-w-3xl">
+        <div className="space-y-16 max-w-6xl">
           {careerChapters.map((c) => (
             <div key={c.title} className="grid md:grid-cols-[140px_1fr] gap-6 pb-16 border-b border-border last:border-b-0 last:pb-0">
               <p className="font-mono text-xs text-text-tertiary pt-1">{c.period}</p>
@@ -81,7 +81,7 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-24 pt-16 border-t border-border flex items-center justify-between flex-wrap gap-6">
-          <p className="text-text-secondary max-w-md">
+          <p className="text-text-secondary max-w-5xl leading-relaxed">
             Every role has expanded my understanding of investment analytics. The projects on this site demonstrate how I apply that experience to design practical, scalable analytical solutions.
           </p>
           <Button href="/projects" variant="primary">

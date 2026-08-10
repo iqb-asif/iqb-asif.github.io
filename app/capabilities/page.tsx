@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/Button";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { capabilities } from "@/data/capabilities";
 
@@ -25,6 +26,11 @@ export default function CapabilitiesPage() {
       />
 
       <section className="container-page py-16 md:py-24">
+        <div className="flex justify-end mb-8">
+  <Button href="/certifications" variant="secondary">
+    Explore Certifications
+  </Button>
+</div>
         <div className="grid sm:grid-cols-2 gap-px bg-border rounded-[var(--radius-lg)] overflow-hidden border border-border">
           {capabilities.map((cap) => (
             <div key={cap.title} className="glow-card border border-transparent bg-bg p-7 md:p-8">

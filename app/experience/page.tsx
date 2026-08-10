@@ -67,10 +67,6 @@ export default function ExperiencePage() {
                     -translate-y-1/2
                     z-0
                     opacity-[0.8]
-                     invert
-    dark:invert-0
-     dark:brightness-100
-    dark:invert
                   "
                 >
                   {Logo && (

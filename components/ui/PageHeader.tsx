@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { SpiderWebCanvas } from "@/components/home/SpiderWebCanvas";
 import { HoverFillText } from "@/components/ui/HoverFillText";
 import { RevealOnLoad } from "@/components/ui/RevealOnLoad";
+import { Button } from "./Button";
 
 export function PageHeader({
   eyebrow,
@@ -47,13 +48,13 @@ export function PageHeader({
           <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent-blue mb-3">
             {eyebrow}
           </p>
-          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-balance max-w-none">
+          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-balance max-w-full">
             <HoverFillText text={title} />
           </h1>
         </RevealOnLoad>
         {description && (
           <RevealOnLoad y={dir * 14} delay={0.16}>
-            <p className="mt-5 text-base md:text-lg text-text-secondary leading-relaxed max-w-2xl">
+            <p className="mt-5 text-base md:text-lg text-text-secondary leading-relaxed max-w-full">
               {description}
             </p>
           </RevealOnLoad>

@@ -7,7 +7,6 @@ export function Footer() {
       <div className="container-page py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div>
           <p className="font-medium">{profile.name}</p>
-          <p className="text-sm text-text-secondary">{profile.headline}</p>
         </div>
 
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-text-secondary">
